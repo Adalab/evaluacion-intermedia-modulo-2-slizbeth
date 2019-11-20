@@ -20,23 +20,18 @@ const control = function (){
   console.log("Número aleatorio: " + randomNumber); //3.mostrar número aleatorio
   console.log("Número introducido: " + numberParseInt); //4.contenido input
 
-  if(numberParseInt >1){
+  if(numberParseInt < 1){
     firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
-    //console.log('El número debe estar entre 1 y 100');
-  }else if(numberParseInt < 100){
+  }else if(numberParseInt > 100){
     firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
-  }else if(numberParseInt >= randomNumber){
+  }else if(numberParseInt > randomNumber){
     firsTextElement.innerHTML= 'Demasiado alto.';
-    //console.log('Demasiado alto.');
-  }else if(numberParseInt <= randomNumber){
+  }else if(numberParseInt < randomNumber){
     firsTextElement.innerHTML= 'Demasiado bajo.';
-    //console.log('Demasiado bajo.');
   }else if(numberParseInt === randomNumber){
     firsTextElement.innerHTML= 'Has ganado campeona!!!';
-    //console.log('Has ganado campeona!!!');
   }else{
     firsTextElement.innerHTML= 'No has introducido ningún número';
-    //console.log('No');
   }
 
   //console.log(event.target);
