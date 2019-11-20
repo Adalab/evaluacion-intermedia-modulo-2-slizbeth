@@ -20,7 +20,12 @@ const control = function (){
   console.log("Número aleatorio: " + randomNumber); //3.mostrar número aleatorio
   console.log("Número introducido: " + numberParseInt); //4.contenido input
 
-  if(numberParseInt >= randomNumber){
+  if(numberParseInt >1){
+    firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
+    //console.log('El número debe estar entre 1 y 100');
+  }else if(numberParseInt < 100){
+    firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
+  }else if(numberParseInt >= randomNumber){
     firsTextElement.innerHTML= 'Demasiado alto.';
     //console.log('Demasiado alto.');
   }else if(numberParseInt <= randomNumber){
@@ -29,11 +34,8 @@ const control = function (){
   }else if(numberParseInt === randomNumber){
     firsTextElement.innerHTML= 'Has ganado campeona!!!';
     //console.log('Has ganado campeona!!!');
-  }else if(numberParseInt >=1 && randomNumber<= 100){
-    firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
-    //console.log('El número debe estar entre 1 y 100');
   }else{
-    firsTextElement.innerHTML= 'No';
+    firsTextElement.innerHTML= 'No has introducido ningún número';
     //console.log('No');
   }
 
@@ -47,7 +49,7 @@ const control = function (){
 const contClik  = function (a){
   cont++;
   countElement.innerHTML = cont;
-  console.log('Número de veces que ha pulsado el botón' + cont);
+  console.log('Número de veces que ha pulsado el botón: ' + cont);
   
 }
 
