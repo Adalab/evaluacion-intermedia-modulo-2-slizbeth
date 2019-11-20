@@ -7,7 +7,7 @@
         <title>Adivinar el número</title>
     </head>
     <body>
-        <div class="page">
+        <div id="page" class="page">
             <div class="head">
                 <h1>Adivina el número</h1>
             </div>
@@ -15,8 +15,9 @@
                 <label for="number">Introduce aquí tu número</label><br>
                 <input id="numberInput" type="text" name="number" />
             </form>
-            <p id="firstText"></p>
+            <p id="firsText"></p>
             <p id="secondText"></p>
+            <p id="thirdText">Número de intentos: <span id="counter"></span></p>
             <button id="button" type="button" name="button">Prueba</button>
         </div>
         <script type="text/javascript" src="./js/main.js"></script>
