@@ -21,19 +21,19 @@ const control = function (){
   console.log("Número introducido: " + numberParseInt); //4.contenido input
 
   if(numberParseInt >= randomNumber){
-    secondTextElement.innerHTML= 'Demasiado alto.';
+    firsTextElement.innerHTML= 'Demasiado alto.';
     //console.log('Demasiado alto.');
   }else if(numberParseInt <= randomNumber){
-    secondTextElement.innerHTML= 'Demasiado bajo.';
+    firsTextElement.innerHTML= 'Demasiado bajo.';
     //console.log('Demasiado bajo.');
   }else if(numberParseInt === randomNumber){
-    secondTextElement.innerHTML= 'Has ganado campeona!!!';
+    firsTextElement.innerHTML= 'Has ganado campeona!!!';
     //console.log('Has ganado campeona!!!');
   }else if(numberParseInt >=1 && randomNumber<= 100){
-    secondTextElement.innerHTML= 'El número debe estar entre 1 y 100';
+    firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
     //console.log('El número debe estar entre 1 y 100');
   }else{
-    secondTextElement.innerHTML= 'No';
+    firsTextElement.innerHTML= 'No';
     //console.log('No');
   }
 
