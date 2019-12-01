@@ -6,7 +6,7 @@ body{
 
 .page{
     box-sizing: border-box;
-    border: 40px double #7ed6df;
+    border: 15px double #7ed6df;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -14,7 +14,13 @@ body{
     align-items: center;
 }
 
-.head{
+@media all and (min-width:768px) {
+    .page{
+        border: 40px double #7ed6df;
+    }
+}
+
+.title{
     color:#22a6b3;
     text-transform: uppercase;
 }
@@ -34,6 +40,7 @@ body{
 }
 
 .inputText{
+    width: 190px;
     padding: 10px;
     margin: 8px 0;
     display: block;
