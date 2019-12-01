@@ -1,13 +1,22 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Handlee', cursive;
+}
+
 .page{
-    padding: 0 15px;
+    box-sizing: border-box;
+    border: 40px double #7ed6df;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .head{
-    color: rgb(102, 102, 102);
-}
-
-.inputText{
-    display: block;
+    color:#22a6b3;
+    text-transform: uppercase;
 }
 
 .button{
@@ -15,18 +24,43 @@
     font-weight: 600;
     color: #fff;
     background-color: rgb(79, 209, 166);
-    border-radius: 5px;
-    padding: 10px 20px;
+    width: 70px;
+    height: 70px;
+    margin: 6px;
+    border-radius: 3px;
+    transition: 1s;
+    cursor: pointer;
+    font-family: 'Handlee', cursive;
 }
 
 .inputText{
-    border: none;
-    border-radius: 5px;
     padding: 10px;
-    background-color: rgba(214, 207, 207, 0.863);
     margin: 8px 0;
+    display: block;
+    font-size: 25px;
+    border: 4px dotted #2929f7;
+    text-align: center;
 }
-.firsText, .secondText{
-    border: 2px solid rgb(196, 196, 196);
-    padding: 5px;
+
+.counter{
+    font-size: 25px;
+    text-decoration: none
+   
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.firsText{
+    text-decoration-line:  underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #2929f7;
+}
+
+.button:hover{
+    background-color: #2929f7;
+    transform: scale(0.8);
+    box-shadow: inset 0 0 0 25px #2929f7;
 }

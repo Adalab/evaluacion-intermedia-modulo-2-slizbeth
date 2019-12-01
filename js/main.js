@@ -1,63 +1,66 @@
 'use strict';
 
 //declaraion de variables
-const numberInputElement = document.querySelector('#numberInput');
+const form = document.querySelector('.form');
+const userNumber = document.querySelector('#user-number');
 const buttonElement = document.querySelector('#button');
+const buttonResetElement = document.querySelector('#resetButton');
 const firsTextElement  = document.querySelector('#firsText');
-const secondTextElement = document.querySelector('#secondText');
 const countElement  = document.querySelector('#counter');
-let cont = 0;
+let attemps = 0;
 
-//funcion que genera num aleatorio entre 1 y 100
-const  getRandomNumber = (max) => Math.ceil(Math.random() * max);
+//numero aleatorio
+const  getRandomNumber = max => Math.ceil(Math.random() * max);
 const randomNumber = getRandomNumber(100);
+console.log("Número aleatorio: " + randomNumber);
 
-//funcion que evalua las condiciones del numero
-const control = function (){
-  let numberInputValue = numberInputElement.value;
-  let numberParseInt = parseInt(numberInputValue);
-  //console.log(typeof(numberParseInt));
-  console.log("Número aleatorio: " + randomNumber); //3.mostrar número aleatorio
-  console.log("Número introducido: " + numberParseInt); //4.contenido input
-
-  if(numberParseInt < 1){
+//verifica el numero introducido con el numero aleatorio
+const checkNumbers = function (){
+  let userNumberValue = parseInt(userNumber.value);
+  
+  if( userNumberValue > 100 || userNumberValue <1){
     firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
-  }else if(numberParseInt > 100){
-    firsTextElement.innerHTML= 'El número debe estar entre 1 y 100';
-  }else if(numberParseInt > randomNumber){
-    firsTextElement.innerHTML= 'Demasiado alto.';
-  }else if(numberParseInt < randomNumber){
-    firsTextElement.innerHTML= 'Demasiado bajo.';
-  }else if(numberParseInt === randomNumber){
+  }else if(userNumberValue > randomNumber){
+    firsTextElement.innerHTML= 'Demasiado alto..';
+  }else if(userNumberValue < randomNumber){
+    firsTextElement.innerHTML= 'Demasiado bajo...';
+  }else if(userNumberValue === randomNumber){
     firsTextElement.innerHTML= 'Has ganado campeona!!!';
   }else{
-    firsTextElement.innerHTML= 'No has introducido ningún número';
+    firsTextElement.innerHTML= 'Introduce un número para jugar';
   }
-
-  //console.log(event.target);
-  let buttonElementClik = event.target;
-  //llamar a la funcion contar clicks
-  contClik(buttonElementClik);
 }
 
-//funcion que cuentas los cliks del botón
-const contClik  = function (a){
-  cont++;
-  countElement.innerHTML = cont;
-  console.log('Número de veces que ha pulsado el botón: ' + cont);
-  
+//inicio juego
+function eventClickHandler(){
+  countAttempts();
+  checkNumbers();
 }
 
 //funcion que muestra texto al cargar la página
 const write  = function (){
-  // const chilParagraph = document.createElement('p');  
-  // chilParagraph.innerHTML= 'Pista: Escribe el número y dale a Prueba';
-  // pageElement.appendChild(chilParagraph);
-  firsTextElement.innerHTML = 'Pista: Escribe el número y dale a Prueba';
+  firsTextElement.innerHTML = 'Escribe el número y dale a Prueba';
 }
 
-//listeners?
-window.addEventListener('load', write);
-buttonElement.addEventListener('click', control);
+//tecla intro//
+function sumbitForm(event){
+    event.preventDefault();
+    eventClickHandler();
+    countAttempts();
+}
 
+//contador de intentos///
+const countAttempts  = function (){
+  userNumber.value === '' ? attemps = 0 : attemps++, countElement.innerHTML = attemps;
+}
+
+//reinicio//
+const reset = () =>{
+  document.location.reload();
+}
+
+window.addEventListener('load', write);
+buttonElement.addEventListener('click', eventClickHandler);
+form.addEventListener('submit', sumbitForm);
+buttonResetElement.addEventListener('click', reset);
 
